@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, Image, Text, AsyncStorage, StyleSheet } from 'react-native';
+import { SafeAreaView, ScrollView, Image, Text, AsyncStorage, StyleSheet } from 'react-native';
 import SpotList from '../components/SpotList';
 import logo from '../assets/logo.png';
 
@@ -8,9 +8,9 @@ export default function List() {
 
   // Fire when the page is opened.
   useEffect(() => {
-    // ReactJS, Node.js 'string' => storagedTechs => [ReacJS, [ Node.js]
-    AsyncStorage.getItem('techs').then(storagedTechs => {
-      const techsArray = storagedTechs.split(',').map(tech => tech.trim());
+    // ReactJS, Node.js 'string' => storedTechs => [ReactJS, [ Node.js]
+    AsyncStorage.getItem('techs').then(storedTechs => {
+      const techsArray = storedTechs.split(',').map(tech => tech.trim());
       setTechs(techsArray);
     })
   }, []);
@@ -18,8 +18,9 @@ export default function List() {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={logo} />
-
+      <ScrollView>
       {techs.map(tech => <SpotList key={tech} tech={tech} /> )}
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -35,4 +36,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 10,
   },
-})
+});
+
