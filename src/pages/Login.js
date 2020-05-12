@@ -8,13 +8,13 @@ export default function Login({ navigation }) {
   const [techs, setTechs] = useState('');
 
   // If the user has already done the login it will send it to the 'List' page.
-  // useEffect(() => {
-  //   AsyncStorage.getItem('user').then(user => {
-  //     if (user) {
-  //       navigation.navigate('List');
-  //     }
-  //   })
-  // }, []);
+  useEffect(() => {
+    AsyncStorage.getItem('user').then(user => {
+      if (user) {
+        navigation.navigate('List');
+      }
+    })
+  }, []);
 
 
   async function handleSubmit() {
