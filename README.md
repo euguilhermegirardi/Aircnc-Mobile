@@ -40,7 +40,7 @@ The mobile was developed with [**_React Native_**](https://reactnative.dev/) usi
 5. In localhost you can open-up the project by clickin on 'Run on...' iOS, Android or in the browser.
 
 Obs. Attention on this part. You may have to change the 'baseURL' in the file 'src/services/api.js' if the app doesn't run at first.
-Check the CONNECTION in the localhost in 'exp://...' on the right.
+Check the CONNECTION in the localhost in 'exp://...' on the left.
 
 ## Contributing
 
